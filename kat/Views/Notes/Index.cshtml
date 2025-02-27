@@ -1,0 +1,25 @@
+@model List<NoteApp.Models.Note>
+
+<h2>Заметки</h2>
+
+<a asp-action="Create" asp-route-categoryId="@ViewBag.CategoryId" class="btn btn-primary mb-3">Создать заметку</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Содержание</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var note in Model)
+        {
+            <tr>
+                <td>@note.Content</td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@note.Id" class="btn btn-danger btn-sm">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

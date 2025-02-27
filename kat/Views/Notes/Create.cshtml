@@ -1,0 +1,13 @@
+@model NoteApp.Models.Note
+
+<h2>Создать заметку</h2>
+
+<form asp-action="Create">
+    <input type="hidden" asp-for="CategoryId" value="@ViewBag.CategoryId" />
+    <div class="form-group">
+        <label asp-for="Content" class="control-label"></label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Создать</button>
+</form>
